@@ -3,8 +3,6 @@
 @section('pageTitle', $pageTitle)
 
 
-@section('pageTitle', 'Home') 
-
 @section('main')
   <div class="task-list-container">
     <h1 class="task-list-heading">Task List</h1>
@@ -41,7 +39,11 @@
               Not Started
           @endswitch
         </div>
+        <!-- Ditambahkan -->
+        <div>
+          <a href="{{ route('tasks.edit', ['id' => $task->id]) }}">Edit</a>
         </div>
+      </div>
     @endforeach
   </div>
-  @endsection
+@endsection
