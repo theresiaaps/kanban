@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="{{ asset('style.css') }}">
-  <title>TaskList</title>
-</head>
+@section('pageTitle', $pageTitle)
 
-<body>
+
+@section('pageTitle', 'Home') 
+
+@section('main')
   <div class="task-list-container">
     <h1 class="task-list-heading">Task List</h1>
 
@@ -20,6 +15,7 @@
       <div class="task-list-header-due-date">Due Date</div>
       <div class="task-list-header-progress">Progress</div>
     </div>
+
     @foreach ($tasks as $index => $task)
       <div class="table-body">
         <div class="table-body-task-name">
@@ -48,6 +44,4 @@
         </div>
     @endforeach
   </div>
-</body>
-
-</html>
+  @endsection
