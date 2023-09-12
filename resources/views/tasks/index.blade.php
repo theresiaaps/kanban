@@ -8,7 +8,7 @@
 
   <!-- Paste the code below -->
   <div class="task-list-task-buttons">
-    <a href="{route('tasks.create') }">
+    <a href="{{route('tasks.create') }}">
       <button  class="task-list-button">
         <span class="material-icons">add</span>Add task
       </button>

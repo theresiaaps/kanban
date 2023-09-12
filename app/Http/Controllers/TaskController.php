@@ -18,6 +18,13 @@ class TaskController extends Controller
       return view('tasks.edit', ['pageTitle' => $pageTitle, 'task' => $task]);
   }
 
+  public function create()
+  {
+      $pageTitle = 'Create Task';
+
+      return view('tasks.create', ['pageTitle' => $pageTitle]);
+  }
+
   public function __construct()
   {
       $this->tasks = [
