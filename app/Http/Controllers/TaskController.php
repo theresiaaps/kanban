@@ -49,4 +49,23 @@ class TaskController extends Controller
 
   return redirect()->route('tasks.index');
   }
+  public function update(Request $request, $id){
+    $task = Task::find($id);
+    $task->update([
+      'name' => $request->name,
+      'detail' => $request->detail,
+      'due_date' => $request->due_date,
+      'status' => $request->status,
+  ]);
+  return redirect()->route('tasks.index');
+  }
+  public function delete($id){
+    $task = Task::find($id);
+    return view('tasks.delete',["pageTitle"=>"halaman hapus", 'task'=>$task]);
+  }
+  public function destroy($id){
+    $task = Task::find($id);
+    $task -> delete();
+    return redirect()->route('tasks.index');
+  }
 }

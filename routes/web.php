@@ -25,3 +25,8 @@ Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.crea
 
 Route::post('/tasks/', [TaskController::class, 'store'])->name('tasks.store');
 
+Route::put('/tasks/{id}/update' , [TaskController::class, 'update'])->name('tasks.update');
+
+Route::get('/tasks/{id}/delete',[TaskController::class, 'delete'])->name('tasks.delete');
+
+Route::delete('/tasks/{id}/destroy', [TaskController::class, 'destroy'])->name('tasks.destroy');
