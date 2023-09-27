@@ -30,3 +30,5 @@ Route::put('/tasks/{id}/update' , [TaskController::class, 'update'])->name('task
 Route::get('/tasks/{id}/delete',[TaskController::class, 'delete'])->name('tasks.delete');
 
 Route::delete('/tasks/{id}/destroy', [TaskController::class, 'destroy'])->name('tasks.destroy');
+
+Route::get('/tasks/progress', [TaskController::class, 'progress'])->name('tasks.progress');
