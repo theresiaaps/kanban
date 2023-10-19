@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,20 +16,33 @@ use App\Http\Controllers\TaskController;
 
 Route::get('/', function () {
     return view('home');
-})->name('home'); 
+})->name('home')->middleware('auth'); 
 
-Route::get('/tasks/', [TaskController::class, 'index'])->name('tasks.index');
+Route::name('tasks.')
+->controller(TaskController::class)
+->middleware('auth')
+->prefix('tasks')
+->group(function(){
+    Route::get('/', 'index')->name('index');
+    Route::get('{id}/edit', 'edit')->name('edit');
+    Route::get('create', 'create')->name('create');
+    Route::post('/', 'store')->name('store');
+    Route::put('{id}/update', 'update')->name('update');
+    Route::get('{id}/delete', 'delete')->name('delete');
+    Route::delete('{id}/destroy', 'destroy')->name('destroy');
+    Route::get('progress', 'progress')->name('progress');
+});
 
-Route::get('/tasks/{id}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
 
-Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
 
-Route::post('/tasks/', [TaskController::class, 'store'])->name('tasks.store');
+Route::name('auth.')
+->controller(AuthController::class)
+->group(function () {
+    Route::get('signup', 'signupForm')->name('signupForm')->middleware('guest');
+    Route::post('signup', 'signup')->name('signup')->middleware('guest');
+    Route::get('login', 'loginForm')->name('loginForm')->middleware('guest');
+    Route::post('login', 'login')->name('login')->middleware('guest');
+    Route::post('logout', 'logout')->name('logout')->middleware('auth');
+});
 
-Route::put('/tasks/{id}/update' , [TaskController::class, 'update'])->name('tasks.update');
 
-Route::get('/tasks/{id}/delete',[TaskController::class, 'delete'])->name('tasks.delete');
-
-Route::delete('/tasks/{id}/destroy', [TaskController::class, 'destroy'])->name('tasks.destroy');
-
-Route::get('/tasks/progress', [TaskController::class, 'progress'])->name('tasks.progress');
