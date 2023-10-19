@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +33,10 @@ Route::get('/tasks/{id}/delete',[TaskController::class, 'delete'])->name('tasks.
 Route::delete('/tasks/{id}/destroy', [TaskController::class, 'destroy'])->name('tasks.destroy');
 
 Route::get('/tasks/progress', [TaskController::class, 'progress'])->name('tasks.progress');
+
+Route::name('auth.')
+->controller(AuthController::class)
+->group(function () {
+    Route::get('signup', 'signupForm')->name('signupForm');
+    Route::post('signup', 'signup')->name('signup');
+});
