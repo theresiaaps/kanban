@@ -31,6 +31,7 @@ Route::name('tasks.')
     Route::get('{id}/delete', 'delete')->name('delete');
     Route::delete('{id}/destroy', 'destroy')->name('destroy');
     Route::get('progress', 'progress')->name('progress');
+    Route::patch('{id}/move', 'move')->name('move');
 });
 
 
