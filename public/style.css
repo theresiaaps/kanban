@@ -131,7 +131,7 @@ body {
 
 .task-list-header-detail {
   padding: 16px;
-  width: 30%;
+  width: 20%;
 }
 
 .task-list-header-due-date {
@@ -162,7 +162,7 @@ body {
 }
 
 .table-body-detail {
-  width: 30%;
+  width: 20%;
   padding: 16px;
   overflow-wrap: anywhere;
   border-right: 1px solid #d8d8d8;
@@ -174,9 +174,40 @@ body {
   border-right: 1px solid #d8d8d8;
 }
 
+.table-body-files {
+width: 15%;
+padding: 16px;
+border-right: 1px solid #d8d8d8;
+}
+
+.task-list-header-owner-name {
+padding: 16px;
+width: 15%;
+}
+
+.task-list-header-links {
+padding: 16px;
+width: 5%;
+}
+
+.task-list-header-file {
+padding: 16px;
+width: 15%;
+}
+
 .table-body-progress {
   width: 15%;
   padding: 16px;
+  border-right: 1px solid #d8d8d8;
+}
+
+.table-body-owner-name {
+width: 15%;
+padding: 16px;
+}
+
+.table-body-links {
+width: 10%;
 }
 
 .menu-icon {
@@ -261,63 +292,125 @@ body {
 .auth-link a:hover {
   text-decoration: underline;
 }
+
+
+
+
 .task-progress-board {
-  display: flex;
-  justify-content: space-around;
+display: flex;
+justify-content: space-around;
 }
 
 .task-progress-column {
-  width: 22%;
+width: 22%;
 }
 
 .task-progress-column-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 4px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0px 4px;
 }
 
 .task-progress-card {
-  background-color: rgb(199, 239, 208);
-  border-radius: 12px;
-  padding: 24px;
-  margin: 12px 0px;
-  font-size: 20px;
-  overflow-wrap: anywhere;
-  position: relative;
+background-color: rgb(199, 239, 208);
+border-radius: 12px;
+padding: 24px;
+margin: 12px 0px;
+font-size: 20px;
+overflow-wrap: anywhere;
+position: relative;
 }
 
 .task-progress-card-left {
-  display: flex;
-  justify-content: space-between;
+display: flex;
+justify-content: space-between;
 }
 
 .task-progress-card-right {
-  display: flex;
-  justify-content: flex-end;
+display: flex;
+justify-content: flex-end;
 }
 
 .task-progress-card-top-check {
-  color: rgb(197, 197, 197);
-  font-size: 28px;
-  border: none;
-  background: none;
-  outline: none;
-  box-shadow: none;
-  cursor: pointer;
+color: rgb(197, 197, 197);
+font-size: 28px;
+border: none;
+background: none;
+outline: none;
+box-shadow: none;
+cursor: pointer;
 }
 
 .task-progress-card-top-checked {
-  color: rgb(85, 200, 159);
-  cursor: default;
-  font-size: 28px;
+color: rgb(85, 200, 159);
+cursor: default;
+font-size: 28px;
 }
 
 .task-progress-card-top-edit {
-  cursor: pointer;
-  text-decoration: none;
+cursor: pointer;
+text-decoration: none;
 }
 
 .task-progress-card-title {
-  font-size: 30px;
+font-size: 30px;
+}
+
+.task-progress-card-file {
+display: flex;
+align-items: center;
+background-color: #e9ffee;
+padding: 12px;
+margin-bottom: 12px;
+}
+
+.table-body-role-name {
+width: 15%;
+padding: 16px;
+display: flex;
+align-items: center;
+overflow-wrap: anywhere;
+}
+
+.table-body-permission {
+width: 50%;
+padding: 16px;
+border-left: 1px solid #d8d8d8;
+}
+
+.table-body-permission-item {
+padding: 4px 0;
+}
+
+.table-body-user-name {
+width: 15%;
+padding: 16px;
+}
+
+.table-body-user-role {
+width: 30%;
+padding: 16px;
+}
+
+.uploaded-files {
+padding-top: 20px;
+}
+
+.uploaded-files-title {
+color: rgb(85, 200, 159);
+}
+
+.uploaded-file {
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 30%;
+padding: 12px;
+border: 1px solid #333;
+margin-bottom: 20px;
+}
+
+.uploaded-file span {
+color: #333;
 }
