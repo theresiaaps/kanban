@@ -4,7 +4,6 @@
     <span class="material-icons sidebar-icon">home</span>
     <p class="sidebar-text">Home</p>
   </a>
-    
     <a class="sidebar-link" href="{{ route('tasks.index') }}">
     <span class="material-icons sidebar-icon">list</span>
     <p class="sidebar-text">Task List</p>
@@ -12,6 +11,14 @@
   <a class="sidebar-link" href="{{ route('tasks.progress') }}">
       <span class="material-icons sidebar-icon">check_box</span>
       <p class="sidebar-text">Task Progress</p>
+    </a>
+    <a class="sidebar-link" href="{{ route('roles.index') }}">
+      <span class="material-icons sidebar-icon">settings</span>
+      <p class="sidebar-text">Roles</p>
+    </a>
+    <a class="sidebar-link" href="{{ route('users.index') }}">
+      <span class="material-icons sidebar-icon">group</span>
+      <p class="sidebar-text">User</p>
     </a>
     @if (Auth::check())
       <a class="sidebar-link" href=""
